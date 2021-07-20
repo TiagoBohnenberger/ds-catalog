@@ -31,7 +31,7 @@ public class CategoryService {
     @Transactional(readOnly = true)
     public CategoryDTO findById(Long id) {
         Optional<Category> obj = repository.findById(id);
-        Category entity = obj.orElseThrow(() -> new ResourceNotFoundException("Erro na solicitação do recurso: ID inválido!"));
+        Category entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entidade inexistente: ID " + id + " inválido!"));
         return new CategoryDTO(entity);
     }
 
