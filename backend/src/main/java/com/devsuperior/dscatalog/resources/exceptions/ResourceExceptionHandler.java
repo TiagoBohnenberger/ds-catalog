@@ -13,7 +13,7 @@ import java.time.Instant;
 @ControllerAdvice
 public class ResourceExceptionHandler {
 
-    private final static String ERROR_MESSAGE = "Erro no recurso de entidade";
+    private final static String ERROR_MESSAGE = "Erro de recurso";
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<StandardError> entityNotFound(ResourceNotFoundException e, HttpServletRequest request) {
