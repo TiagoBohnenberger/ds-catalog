@@ -16,10 +16,12 @@ public class User implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;
+
+    @Column(unique = true)
     private String email;
     private String password;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "tb_user_role",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -46,11 +48,11 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getFirsName() {
+    public String getFirstName() {
         return firstName;
     }
 
-    public void setFirsName(String firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
