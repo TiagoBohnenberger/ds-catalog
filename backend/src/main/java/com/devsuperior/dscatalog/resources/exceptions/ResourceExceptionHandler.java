@@ -16,7 +16,7 @@ public class ResourceExceptionHandler {
     private final static String ERROR_MESSAGE = "Erro de recurso";
 
     @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<StandardError> entityNotFound(ResourceNotFoundException e, HttpServletRequest request) {
+    public static ResponseEntity<StandardError> entityNotFound(ResourceNotFoundException e, HttpServletRequest request) {
         HttpStatus status = HttpStatus.NOT_FOUND;
         StandardError error = new StandardError();
 
