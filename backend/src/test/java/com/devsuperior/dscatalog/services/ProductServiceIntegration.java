@@ -57,7 +57,7 @@ public class ProductServiceIntegration {
 
         PageRequest pageRequest = PageRequest.of(0, 10);
 
-        Page<ProductDTO> resultPage = productService.findAllPaged(pageRequest);
+        Page<ProductDTO> resultPage = productService.findAllPaged(0L, "", pageRequest);
 
         assertFalse(resultPage.isEmpty());
         assertEquals(0, resultPage.getNumber());
@@ -70,7 +70,7 @@ public class ProductServiceIntegration {
 
         PageRequest pageRequest = PageRequest.of(50, 10);
 
-        Page<ProductDTO> resultPage = productService.findAllPaged(pageRequest);
+        Page<ProductDTO> resultPage = productService.findAllPaged(0L, "", pageRequest);
 
         assertTrue(resultPage.isEmpty());
     }
@@ -80,7 +80,7 @@ public class ProductServiceIntegration {
 
         PageRequest pageRequest = PageRequest.of(0, 10, Sort.by("name"));
 
-        Page<ProductDTO> resultPage = productService.findAllPaged(pageRequest);
+        Page<ProductDTO> resultPage = productService.findAllPaged(0L, "", pageRequest);
 
         assertFalse(resultPage.isEmpty());
         assertEquals(0, resultPage.getNumber());
