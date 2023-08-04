@@ -9,7 +9,7 @@ type Props = {
 
 const ProductCard = ({ product }: Props) => {
   return (
-    <div className="base-card product-card">
+    <div id={product.id.toString()} className="base-card product-card">
       <div className="card-top-container">
         <img src={product.imgUrl} alt={product.name} />
       </div>
